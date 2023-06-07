@@ -1,0 +1,52 @@
+<div class="container p-5">   
+  <form>  
+<div class="card" *ngFor="let j of Jobs">
+    
+  <div class="card-body job" (click)="NavigateToProposals(j)">
+      <div class="row">
+      <h4 class="card-title col-10 mt-2" style="color:#404c68; font-weight: bold;">{{j.title}}</h4>
+    </div>
+    <div class="row">
+      <div><small class="text-muted display-inline-block text-muted"><strong data-test="job-type">Fixed-price</strong> <span>
+        </span> <span>
+        -
+        <span>Est. Budget: </span> <span data-test="budget">
+         "$"+ {{j.budget}}
+        </span></span>  <span>
+        - Posted
+        <span data-test="posted-on"><span data-test="UpCRelativeTime"></span></span></span></small> <!----></div>
+    </div>
+      <p class="card-text">{{j.description}}</p>
+      <div class="up-skill-wrapper">
+      </div>
+      <!-- <div class="row">
+        <span>Proposal :<span>{{j.proposals}}</span></span>
+      </div> -->
+
+
+      <div class="row">
+        <div >
+          <span><i class="fa-regular fa-badge-check" style="background-color:#404c68;"></i></span>
+           &nbsp;
+          <strong><small class="text-muted">Payment verified</small></strong>
+          &nbsp;
+          <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+          <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+          <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+          <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+          <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+          &nbsp;
+          <small data-test="client-spendings" class="d-inline-block"><strong><span data-test="EarnedAmountFormatted">
+            $0
+          </span></strong> <span class="text-muted">spent</span></small>
+          &nbsp;
+          <!-- <small data-test="connects-to-apply" class="d-none d-lg-inline-flex d-md-inline-flex text-muted">
+            Connects to apply:&nbsp;
+            <strong data-test="connect-price">{{j.numberOfConnects}}</strong></small> -->
+        </div>
+        </div>
+  </div>
+ </div>
+</form>
+ </div>
+

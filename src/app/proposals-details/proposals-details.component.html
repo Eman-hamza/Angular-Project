@@ -1,0 +1,50 @@
+<br>
+<br>
+<div class="container contain ">
+  <a (click)="navigateToProposals(proposalDetails.jobId)"><i class="fa-solid fa-chevron-left icon"></i> </a>
+  <div class="row bg-light" style="padding: 20px; box-shadow: 3px 3px 5px rgb(229, 227, 227);">
+    <div class="col col-md-2">
+      <img [src]="proposalDetails.freelancerImage
+        " class="img-circle" alt="Cinque Terre" width="150" height="150" style="border-radius: 50%;">
+    </div>
+    <div class="col col-md-8 names">
+      <h4>{{proposalDetails.freelancerName}}</h4>
+      <div style="display: flex;">
+        <i class="fa-solid fa-location-dot" style="color: #404c68; margin-top: 10px; margin-right: 10px;"></i>
+        <p style="margin-top: 6px;">{{ proposalDetails.address}}</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row bg-light" style="padding: 20px; box-shadow: 3px 3px 5px rgb(229, 227, 227);">
+    <div class="col col-md-10">
+      <h5>Proposal Details</h5>
+    </div>
+    <div class="col col-md-2">
+      <h6>${{proposalDetails.proposedPrice}}.00/hr</h6>
+    </div>
+    <div class="row">
+      <div class="col col-md-10"></div>
+      <div class="col col-md-2">Proposal Paid</div>
+    </div>
+    <div class="row">
+      <div class="col col-md-10">Cover Latter</div>
+      <div class="col col-md-2"></div>
+    </div>
+    <div class="row">
+      <div class="col col-md-12">
+        {{proposalDetails.coverLetter}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos alias quod
+        asperiores, repudiandae eos facilis sequi porro eius incidunt pariatur tenetur perferendis reprehenderit.
+        Aliquid officia recusandae similique nesciunt quo excepturi!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis accusantium assumenda neque esse quasi
+        dolorem consectetur quae maiores! Perferendis, natus. Sequi porro beatae repellat necessitatibus modi enim
+        tempora itaque soluta.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eveniet beatae perspiciatis cum voluptatibus
+        error veritatis libero. Consequatur, recusandae neque. Aspernatur sint iusto similique dolor eveniet corporis
+        incidunt et maiores.
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>

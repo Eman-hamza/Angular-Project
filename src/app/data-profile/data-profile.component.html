@@ -1,0 +1,168 @@
+<section style="margin: 50px;">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container ">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-11 col-lg-7 col-xl-8">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-5">
+                <h1 class="text text-center mb-5" style="font-family: 'Nanum Myeongjo', serif;font-size: 34px;">Profile details</h1>
+  
+                <form [formGroup]="Dataform" (ngSubmit)='SubmitProfile()'>
+                    <!-- 2 column grid layout with text inputs for the first and last names -->
+                    <div class="row mb-4">
+                      <div class="col" style="display:none;">
+                        <div class="form-outline">
+                          <input type="text" id="form6Example1" formControlName="id" value="id" class="form-control" />
+                          <label class="form-label" for="form6Example1">id</label>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-outline">
+                          <label class="form-label" for="form6Example1">Full name</label>
+                          <input type="text" id="form6Example1" formControlName="name" [(ngModel)]="ProfileList.name" class="form-control"  />
+                       
+                          <div style="height: 50px;" class="alert mt-2 alert-danger" *ngIf="Dataform.get('name')?.errors != null 
+                          && Dataform.get('name')?.touched" >
+                            <p *ngIf="Dataform.get('name')?.errors?.['required'] "><i class="fa-solid fa-circle-exclamation"></i> name is required</p>
+                            <!-- <p>email must contians @</p> -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-outline">
+                          <label class="form-label" for="form6Example2">Title</label>
+                          <input type="text" id="form6Example2" formControlName="title" [(ngModel)]="ProfileList.title" class="form-control" />
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Message input -->
+                    <!-- <div class="form-outline mb-4">
+                        <label class="form-label" for="form6Example8">Overview
+                        <textarea class="form-control" id="form6Example8" [(ngModel)]="ProfileList.description" formControlName="description" rows="4"></textarea>
+                        </label>
+                    </div> -->
+                    <div class="form-outline mb-4" >
+                      <label class="form-label" for="form6Example7">Overview</label>
+                      <textarea class="form-control" formControlName="description" [(ngModel)]="ProfileList.description"  id="form6Example7" rows="4"></textarea>
+                  </div>
+                    <!-- Text input -->
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="form6Example4">Work History</label>
+                      <input type="text" id="form6Example4" formControlName="workHistory" [(ngModel)]="ProfileList.workHistory" class="form-control" />
+                    </div>
+                  
+                    <!-- Text input -->
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="form6Example4">Address</label>
+                      <input type="text" id="form6Example4" formControlName="address" [(ngModel)]="ProfileList.address" class="form-control" />
+                    </div>
+                  
+                    <div class="row mb-4">
+                        <div class="col">
+                          <div class="form-outline">
+                            <label class="form-label" for="form6Example1">Fixed Salary</label>
+                            <input type="number" id="form6Example1" formControlName="fixedSalary"  [(ngModel)]="ProfileList.fixedSalary" class="form-control" />
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-outline">
+                          </div>
+                        </div>
+                      </div>
+                  
+                    <!-- Cilent  input -->
+
+                    <!-- education  input -->
+                    <div class="form-outline mb-4" *ngFor="let item of ProfileList.eductionDTO">
+                      <label class="form-label" for="form6Example7">Education title</label>
+                      <input type="text" id="form6Example7" formControlName="titleEdu" [(ngModel)]="item.titleEdu" class="form-control" />
+                    </div>
+                    <!-- <div class="form-outline mb-4">
+                      <textarea class="form-control" formControlName="educations" id="form6Example7" rows="4"></textarea>
+                  <div style="display:flex;justify-content: space-between;margin-top: 10px;">
+                      <label class="form-label" for="form6Example7">Education
+                      </label>
+                      <button  class="btn bt" style="width:70px;height:35px;border-radius: 25px;background-color:black;color:white;font-size:16px;border:1px solid transparent">Add</button>
+                  </div>
+                  </div> -->
+
+                    <div class="row mb-4" >
+                      <div class="col" *ngFor="let item of ProfileList.eductionDTO">
+                        <label for="datetimepickerInline" class="form-label">From</label>
+                          <div class="form-outline datetimepicker"  data-mdb-inline="true" >
+                            <input type="date" formControlName="from" [(ngModel)]="item.from" class="form-control" id="datetimepickerInline" />
+                          </div>
+                      </div>
+                      <div class="col" *ngFor="let item of ProfileList.eductionDTO">
+                        <label for="datetimepickerInline" class="form-label">TO</label>
+                        <div class="form-outline datetimepicker" data-mdb-inline="true" >
+                          <input type="date" formControlName="to" [(ngModel)]="item.to" class="form-control" id="datepickerInline" />
+                        </div>
+
+
+                        <!-- <mat-form-field class="example-full-width" appearance="fill" *ngFor="let item of ProfileList.eductionDTO">
+                          <mat-label>To</mat-label>
+                          <input matInput [matDatepicker]="picker" formControlName="to" [(ngModel)]="item.to">
+                          <mat-datepicker-toggle matIconSuffix [for]="picker" >
+                            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                          </mat-datepicker-toggle>
+                          <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field> -->
+                      </div>
+                    </div> 
+
+                    <!-- Skill  input -->
+                  <ng-container  formArrayName="nameskill">
+                    <div style="display: flex;justify-content:space-between;">
+                      <label class="form-label" style="margin-top:20px;">Skills</label>   
+                      <div style="display:flex;justify-content: end;margin-top: 10px;">
+                        <input type="button" (click)="addall()" class="btn bt" 
+                        style="width:50px;height:50px;border-radius: 50px;background-color:white;color:black;font-size:20px;border:3px solid black" value="+">
+                      </div>
+                    </div>
+                      <div class="form-outline mb-4" *ngFor="let item of skill; let i=index"  >
+                        <label class="form-label"  >Skills {{i+1}}</label>
+                          <textarea class="form-control" [formControlName]="i"  rows="4"></textarea>
+                      </div>
+                  </ng-container>
+                  <hr>
+                    <!-- languge  input -->
+                    <ng-container  formArrayName="namelanguge">
+                      <div style="display: flex;justify-content:space-between;">
+                        <label class="form-label" style="margin-top:20px;">Languges</label> 
+                        <div style="display:flex;justify-content: end;margin-top: 10px;">
+                          <input type="button" (click)="addlan()" class="btn bt" 
+                          style="width:50px;height:50px;border-radius: 50px;background-color:white;color:black;font-size:20px;border:3px solid black" value="+">
+                        </div>
+                      </div>
+                      <div class="form-outline mb-4" *ngFor="let item of languge; let i=index"  >
+                        <label class="form-label"  >Languges {{i+1}}</label>
+                          <textarea class="form-control" [formControlName]="i"  rows="4"></textarea>
+                      </div>
+                  </ng-container>
+
+                    <!-- <div class="form-outline mb-4" *ngFor="let item of ProfileList.langugeDTOs">
+                      <label class="form-label" for="form6Example7">Languges
+                      </label>
+                        <textarea class="form-control" formControlName="namelanguge" [(ngModel)]="item.namelanguge" id="form6Example7" rows="4"></textarea>
+                        
+                        <div class="one" style="display:flex;justify-content:end;margin-top: 10px;">
+                          <input type="button" class="btn bt" style="width:70px;height:40px;border-radius: 25px;background-color:white;color:black;font-size:16px;border:3px solid #404c68" value="Add">
+  
+                        </div>
+                    </div> -->
+
+                    <!-- Submit button -->
+                    <div  class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-block mb-4" style="width:40%;height:40px;border-radius: 25px;background-color: #404c68;color:white;font-size:16px">
+                          Next</button>
+                    </div>  
+                </form>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

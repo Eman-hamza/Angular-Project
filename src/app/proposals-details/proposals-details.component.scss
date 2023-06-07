@@ -1,0 +1,38 @@
+.btnHire{
+    background-color: #404c68;
+    color: white;
+    border: none;
+    width: 150px;
+    height: 30px;
+    border-radius: 30px;
+}
+a i{
+    font-size: 25px;
+    color: #404c68;
+    margin-bottom: 30px;
+    transition: 0.5s;
+    padding: 10px;
+    border-radius: 50%;
+ }
+a i:hover{
+    cursor: pointer;
+    background-color: #404c68;
+    color: white;
+ }
+h5{
+    font-size: 30px;
+    font-weight: 600;
+}
+h6{
+    font-size: 28px;
+}
+.names{
+    margin-top: 20px;
+}
+.names h4{
+    font-size: 35px;
+    font-weight: bold;
+}
+.names p{
+    font-size: 25px;
+}

@@ -1,0 +1,29 @@
+.btnHire{
+    background-color: #404c68;
+    color: white;
+    border: none;
+    width: 150px;
+    height: 30px;
+    border-radius: 30px;
+}
+h4{
+    color: #404c68;
+    font-size: 25px;
+}
+
+a i{
+    font-size: 25px;
+    color: #404c68;
+    margin-bottom: 30px;
+    transition: 0.5s;
+    padding: 10px;
+    border-radius: 50%;
+}
+a i:hover{
+    cursor: pointer;
+    background-color: #404c68;
+    color: white;
+}
+.job:hover{
+   cursor: pointer;
+}

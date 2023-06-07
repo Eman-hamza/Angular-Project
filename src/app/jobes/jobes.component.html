@@ -1,0 +1,432 @@
+<br>
+<div class="container ">
+  <div class="row m-3" >
+    <div class=" tabs">
+      <span style="margin-right: 10px;"></span>
+      <a (click)="NavigateToSavedJobs()" data-test="saved-jobs-tab" aria-current="page" class="up-tab-btn px-20 mr-0 tab-link" style="color: black; border:3px solid #404c68; padding: 10px 20px; border-radius: 20px;">Saved Jobs ({{countSavedJobs}})</a>
+     </div>
+  </div>
+  <div class="row" style="margin-top: 20px;">
+    <nav id="sidebar" class="col-md-4">
+      <div class="p-4 pt-5">
+        <h3>Filter By</h3>
+        <br>
+        <a href="#" data-bs-toggle="collapse" data-bs-target="#demo1">Category <i class="fa-solid fa-chevron-down icon" ></i></a>
+     <br>
+     <br>
+     <div id="demo1" class="collapse show">
+    
+      <form>
+        <div class="multiselect">
+          <div class="selectBox" onclick="showCheckboxes1()">
+            <select>
+              <option>Select an Category</option>
+            </select>
+            <div class="overSelect"></div>
+          </div>
+          <div id="checkboxes1">
+            <div class="container">
+              <div class="text-center mt-5">
+                <div class="row">
+                  <div class="col-md-12">
+                    <ul class="list-group">
+                      <li class="list-group-item">
+                        <input type="checkbox" [(ngModel)]=" masterSelectedCategory" name="list_name" value="m1"
+                          (change)="checkUncheckAllCategory()" id="selectAllCategory"/> <label for="selectAllCategory"><strong>Select/ Unselect All</strong></label>
+                      </li>
+                    </ul>
+                    <ul class="list-group">
+                      <li class="list-group-item" *ngFor="let item of categories">
+                        <input type="checkbox" [(ngModel)]="item.isSelected" name="list_name" value="{{item.id}}" id="category{{item.id}}"
+                          (change)="isAllSelectedCategory()" />
+                        <label for="category{{item.id}}">{{item.name}}</label>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                  </div>
+                </div>
+              </div>
+             </div>  
+          </div>
+        </div>
+      </form>
+  
+     </div>
+     <br>
+     <hr>
+     <br>
+        <a  href="#" data-bs-toggle="collapse" data-bs-target="#demo">Job Type <i class="fa-solid fa-chevron-down icon" ></i></a>
+        <br>
+        <br>
+    
+        <div id="demo" class="collapse show">
+          <div class="container">
+           <div class="text-center mt-5">
+             <div class="row" style="width: 100%;">
+               <div class="col-md-12">
+                 <ul class="list-group">
+                   <li class="list-group-item">
+                     <input type="radio"  name="list_name" value="m1" style="margin-right:20%"
+                       (change)="isHourly()" id="selectHourly"/> <label for="selectHourly"><strong>Hourly</strong></label>
+                       
+                   </li>
+                   <li class="list-group-item">
+                     <input type="radio"  name="list_name" value="m2" style="margin-right:10%"
+                       (change)="isFixedPrice()" id="selectFixedPrice"/> <label for="selectFixedPrice"><strong>Fixed price</strong></label>
+                   </li>
+                 </ul>
+              
+               </div>
+             </div>
+           </div>
+          </div> 
+          </div>
+          
+
+    
+     <br>
+     <hr>
+     <br>
+     
+     <a  href="#" data-bs-toggle="collapse" data-bs-target="#demo2">Client Location <i class="fa-solid fa-chevron-down icon"  style="margin-left: 60px;"></i></a>
+     <br>
+     <br>
+     <div id="demo2" class="collapse show">
+      <!-- <form> -->
+         <div class="multiselect"> 
+          <div class="selectBox" onclick="showCheckboxes2()">
+            <select>
+              <option>Select an Location</option>
+            </select>
+            <div class="overSelect"></div>
+          </div>
+           <div id="checkboxes2"> 
+             <div class="container">
+              <div class="text-center mt-5">
+                <div class="row">
+                  <div class="col-md-12">
+                    <ul class="list-group">
+                      <li class="list-group-item">
+                        <input type="checkbox" [(ngModel)]=" masterSelectedLocation" name="list_name" value="m1"
+                          (change)="checkUncheckAllLocation()" id="selectAllLocation"/> <label for="selectAllLocation"><strong>Select/ Unselect All</strong></label>
+                      </li>
+                    </ul>
+                    <ul class="list-group">
+                      <li class="list-group-item" *ngFor="let item of locations">
+                        <input type="checkbox" [(ngModel)]="item.isSelected" name="list_name" value="{{item.id}}" id="location{{item.id}}"
+                          (change)="isAllSelectedLocation()" />
+                        <label for="location{{item.id}}">{{item.name}}</label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+             </div> 
+           </div> 
+         </div> 
+      <!-- </form> -->
+      </div> 
+      </div>
+     </nav>
+     <div class="col col-md-8">
+      <div class="container p-5">
+       
+        <div class="border border-grey rounded">
+      
+
+        <div class="row">
+          <div class="col-12" >
+          
+
+            <div class="row pt-5" >
+               <div class="col-10 mx-3">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search this blog">
+                  <div class="input-group-append">
+                  <button class="btn btn-secondary" type="button" style="background-color:#404c68;">
+                  <i class="fa fa-search "></i>
+                  </button>
+      
+                  </div> 
+                </div>
+              </div>
+              
+               <!-- <div class="col-2" >
+                <button type="button" class="btn  btn-rounded" style="color:#404c68; ; border-color: #404c68;; border-width: 2px;">Save Search</button>
+              </div> -->
+            </div>
+             <br>
+             <br>
+            <div *ngIf="beforSelectedLocation && beforSelectedCategory; then thenBlock; else elseBlock1">
+              <div class="row" >
+              </div>
+        </div>
+      </div>
+      </div>
+      </div>
+  
+
+
+
+      <!--Display all Jobs-->
+          <ng-template #thenBlock>
+            <div  style="border: none;" *ngFor="let j of jobs">
+              <div class="card-body" >
+                <div class="row">
+                <h2 class="card-title col-9 mt-2" (click)="getTheId(j)" style="cursor: pointer;" ><b>{{j.jobName}}</b> </h2>
+                <button id="btnJob" type="button" (click)="SavedJob(j)"  class="btnHeart btn-floating col-2 " >
+                  <!-- data-mdb-ripple-color="dark" -->
+                  
+                 <!--  <i  class="fa-solid fa-heart"  id="{{'heart'+j.id+ id}}" style="color:#404c68;"></i>-->
+                <!--[style.backgroundColor]="checkSavedJob? 'blue': 'transparent'"-->
+                <ng-container *ngIf="(j.isSaved==true); then green else red"></ng-container>
+                <ng-template #green>
+                  <i  class="fa-solid fa-heart"  id="{{'heart'+j.ownerOfAccountIdThatPostedThisJob+ id}}" style="color:rgb(42, 175, 42);"></i>
+                </ng-template>
+                <ng-template #red>
+                  <i  class="fa-solid fa-heart"  id="{{'heart'+j.ownerOfAccountIdThatPostedThisJob+ id}}" style="color:#404c68;"></i>
+                </ng-template>
+                </button>
+                
+              </div>
+              <div class="row" >
+                <div>
+                  <small class="text-muted display-inline-block text-muted">
+                    <ng-container *ngIf="(j.isHourly==true);then resultOutOfRange else resultNA;">
+                    </ng-container>
+                    <ng-template #resultOutOfRange>
+                      <strong data-test="job-type">Hourly</strong>
+                    </ng-template>
+                    <ng-template #resultNA>
+                      <strong data-test="job-type">Fixed-price</strong>
+                    </ng-template>
+    
+                 
+                     <span></span> <span>
+                  -
+                  <span>Est. Budget: </span> <span data-test="budget">
+                   "$" {{j.jobPrice}}
+                  </span></span> <!----> <span>
+                  - Posted
+                <span data-test="posted-on"><span data-test="UpCRelativeTime"><strong> The Job was posted in</strong> {{j.timeTheJobWasPostedIn}} </span></span></span></small> <!----></div>
+              </div>
+                <p class="card-text">{{j.jobDescription}}</p>
+                <div class="" >
+                  <!-- <span *ngFor="let item of j.skillsNeededForThisJob">
+                  <a  class=" text-muted btn col-2"  href="#" style="background-color: rgb(241, 240, 240); border-radius: 20px;"  >{{item}}</a>
+                </span> -->
+                </div>
+                <div class="row">
+                  <span style="color: #304061;font-weight: bold;">Proposal :<span style="color:black;font-weight:400 ;">{{j.proposalNumber}}</span></span>
+                </div>
+                <div class="row">
+                  <span style="color: #304061;font-weight: bold;">Posted By :<span style="color:black;font-weight:400 ;">{{j.nameOfClient}}</span></span>
+                </div>
+    
+    
+                <div class="row">
+                  <div >
+                    <span><i class="fa-regular fa-badge-check" style="background-color:#404c68; "></i></span>
+                     
+                    &nbsp;
+                    <span *ngIf="j.starsOfClient==1">
+                    <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+                    
+                  </span>
+                  <span *ngIf="j.starsOfClient==2">
+                    <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+                    <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+    
+                    
+                  </span>
+                  <span *ngIf="j.starsOfClient==3">
+                    <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+                    <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+                    <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+    
+                    
+                  </span>
+                  <span *ngIf="j.starsOfClient==4">
+                    <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+                    <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+                    <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+                    <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+    
+                    
+                  </span>
+                    <span *ngIf="j.starsOfClient==5">
+                    <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+                    <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+                    <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+                    <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+                    <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+    
+                  </span>
+                    &nbsp;
+                    <small style="display: flex;justify-content: center; margin-left: -20px;" data-test="client-spendings" class="d-inline-block"><strong><span data-test="EarnedAmountFormatted">
+                      ${{j.totalPriceThatClientPayed}}
+                    </span ></strong> <span  class="text-muted">spent</span></small>
+                    &nbsp;
+                    <small data-test="connects-to-apply" class="d-none d-lg-inline-flex d-md-inline-flex text-muted">
+                      Connects to apply:&nbsp;
+                      <strong data-test="connect-price">{{j.connectsNeedForThisJob}} Connects</strong></small>
+                  </div>
+    
+                  <div class="col-3">
+               
+          
+                    </div>
+                  </div>
+                </div>
+                <hr>
+            </div>
+        </ng-template>
+
+<!--Dispplay Jobs by Category-->
+ 
+<ng-template #elseBlock1>
+   <div *ngIf="selectedLocation else elseBlock2">
+    <div class="card" style=" border: none;" *ngFor="let job of jobsLocation">
+      <div *ngFor="let j of job">
+      <div class="card-body" >
+        <div class="row">
+        <h5 class="card-title col-10 mt-2" >{{j.title}}</h5>
+        <button id="btnJob" type="button" (click)="SavedJob(j)"  class="btnHeart btn-floating col-2 " >
+          <!-- data-mdb-ripple-color="dark" -->
+          
+         <!--  <i  class="fa-solid fa-heart"  id="{{'heart'+j.id+ id}}" style="color:#404c68;"></i>-->
+        <!--[style.backgroundColor]="checkSavedJob? 'blue': 'transparent'"-->
+        <ng-container *ngIf="(j.isSaved==true); then green else red"></ng-container>
+        <ng-template #green>
+          <i  class="fa-solid fa-heart"  id="{{'heart'+j.ownerOfAccountIdThatPostedThisJob+ id}}" style="color:rgb(77, 209, 77);"></i>
+        </ng-template>
+        <ng-template #red>
+          <i  class="fa-solid fa-heart"  id="{{'heart'+j.ownerOfAccountIdThatPostedThisJob+ id}}" style="color:#404c68;"></i>
+        </ng-template>
+        </button>
+        
+      </div>
+      <div class="row">
+        <div><small class="text-muted display-inline-block text-muted"><strong data-test="job-type">Fixed-price</strong> <span>
+          - <span data-test="contractor-tier">Intermediate</span></span> <span>
+          -
+          <span>Est. Budget: </span> <span data-test="budget">
+           "$"+ {{j.budget}}
+          </span></span> <!----> <span>
+          - Posted
+          <span data-test="posted-on"><span data-test="UpCRelativeTime">timeThatPosted ago</span></span></span></small> <!----></div>
+      </div>
+        <p class="card-text">{{j.description}}</p>
+        <div class="up-skill-wrapper">
+          <a  class="up-skill-badge text-muted btn" href="#" tabindex="0" data-test="attr-item" > python</a>
+        </div>
+        <div class="row">
+          <span>Proposal :<span>NumberOfProposal</span></span>
+        </div>
+
+
+        <div class="row">
+          <div >
+            <span><i class="fa-regular fa-badge-check" style="background-color:#404c68;"></i></span>
+             &nbsp;
+            <strong><small class="text-muted">Payment verified</small></strong>
+            &nbsp;
+            <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+            <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+            <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+            <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+            <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+            &nbsp;
+            <small data-test="client-spendings" class="d-inline-block"><strong><span data-test="EarnedAmountFormatted">
+              $0
+            </span></strong> <span class="text-muted">spent</span></small>
+            &nbsp;
+            <small data-test="connects-to-apply" class="d-none d-lg-inline-flex d-md-inline-flex text-muted">
+              Connects to apply:&nbsp;
+              <strong data-test="connect-price">4 Connects</strong></small>
+          </div>
+          </div>
+        </div>
+    </div>
+   </div>
+   <hr>
+  </div>
+
+
+   
+ <ng-template #elseBlock2>
+   <div *ngIf="selectedCategory" >
+    <div class="card" *ngFor="let job of jobsCategory">
+      <div *ngFor="let j of job">
+      <div class="card-body" >
+        <div class="row">
+        <h5 class="card-title col-10 mt-2">{{j.title}}</h5>
+        <button type="button" class="btn btn-outline-success btn-floating col-2 " data-mdb-ripple-color="dark" style="border: none; width: 40px; height: 40x; border-radius: 60%; align-items: center;">
+          <i class="fa-regular fa-heart"></i></button>
+        
+      </div>
+      <div class="row">
+        <div><small class="text-muted display-inline-block text-muted"><strong data-test="job-type">Fixed-price</strong> <span>
+          - <span data-test="contractor-tier">Intermediate</span></span> <span>
+          -
+          <span>Est. Budget: </span> <span data-test="budget">
+           "$"+ {{j.budget}}
+          </span></span> <!----> <span>
+          - Posted
+          <span data-test="posted-on"><span data-test="UpCRelativeTime">timeThatPosted ago</span></span></span></small> <!----></div>
+      </div>
+        <p class="card-text">{{j.description}}</p>
+        <div class="up-skill-wrapper">
+          <a  class="up-skill-badge text-muted btn" href="#" tabindex="0" data-test="attr-item" > python</a>
+        </div>
+        <div class="row">
+          <span>Proposal :<span>NumberOfProposal</span></span>
+        </div>
+
+
+        <div class="row">
+          <div >
+            <span><i class="fa-regular fa-badge-check" style="background-color:#404c68;"></i></span>
+             &nbsp;
+            <strong><small class="text-muted">Payment verified</small></strong>
+            &nbsp;
+            <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+            <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+            <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+            <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+            <span><i class="fa-solid fa-star" style="color: #404c68;"></i></span>
+            &nbsp;
+            <small data-test="client-spendings" class="d-inline-block"><strong><span data-test="EarnedAmountFormatted">
+              $0
+            </span></strong> <span class="text-muted">spent</span></small>
+            &nbsp;
+            <small data-test="connects-to-apply" class="d-none d-lg-inline-flex d-md-inline-flex text-muted">
+              Connects to apply:&nbsp;
+              <strong data-test="connect-price">4 Connects</strong></small>
+          </div>
+          </div>
+        </div>
+    </div>
+    </div>
+    <hr>
+   </div>
+   </ng-template>
+ 
+</ng-template>
+     </div>
+  </div>
+</div>
+</div>
+
+
+
+   
+  
+
+
+
+
+    
+
+    

@@ -1,0 +1,158 @@
+<!-- 
+
+<main>
+    <section >
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card" id="chat3" style="border-radius: 15px;border:2px solid rgb(189, 189, 189);">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0">
+                    <div class="p-3" data-mdb-perfect-scrollbar="true" style="position: relative; max-height: 400px; overflow: auto">
+                      <div class="input-group rounded mb-3">
+                        <input type="search" style="border:2px solid rgb(189, 189, 189);" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                        <span class="input-group-text border-0" id="search-addon">
+                          <i class="fas fa-search"></i>
+                        </span>
+                      </div>
+                      <div >
+                        <ul class="list-unstyled mb-0">
+                          <li class="p-2 border-bottom" *ngFor="let user of users">
+                            <a href="#!" class="d-flex justify-content-between">
+                              <div class="d-flex flex-row">
+                                <div>
+                                  <img [src]="user.avatar" alt="avatar" class="d-flex align-self-center me-3" width="40" />
+                                  <span class="badge bg-success badge-dot" style="margin-left: 1.9rem;"></span>
+                                </div>
+                                <div class="pt-1">
+                                  <p class="fw-bold mb-0">{{ user.name }}</p>
+                                  <p class="small text-muted">{{ user.message }}</p>
+                                </div>
+                              </div>
+                              <div class="pt-1">
+                                <p class="small text-muted mb-1">{{ user.time }}</p>
+                                <span class="badge bg-danger rounded-pill float-end">{{ user.unread }}</span>
+                              </div>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-7 col-xl-8">
+                    <div class="pt-3 pe-3" data-mdb-perfect-scrollbar="true" style="position: relative; max-height: 400px; overflow: auto ">
+                      <div class="d-flex flex-row justify-content-start" *ngFor="let chat of chats" style="margin-top: 3%;">
+                        <img [src]="chat.avatar" alt="avatar 1" style="width: 40px; height: 100%;" />
+                        <div style="width: 100%;">
+                          <p class="small p-2 me-3 mb-1  rounded-3" style="background-color:#404c68" [ngClass]="{ ' text-white': chat.isSent, 'bg-light': !chat.isSent }">{{ chat.message }}</p>
+                          <p class="small me-3 mb-3 rounded-3 text-muted">{{ chat.time }}</p>
+                        </div>
+                       
+                      </div>
+                
+                    </div>
+                    <div class="text-muted d-flex justify-content-start align-items-center pe-3 pt-3 mt-2">
+                        <input type="text" class="form-control form-control" id="exampleFormControlInput2"
+                          placeholder="Type message" style="border:2px solid rgb(189, 189, 189);">
+                        <a class="ms-1 text-muted" href="#!"><i class="fas fa-paperclip"></i></a>
+                        <a class="ms-3 text-muted" href="#!"><i class="fas fa-smile"></i></a>
+                        <a class="ms-3" href="#!"><i class="fas fa-paper-plane"></i></a>
+                      </div>
+                   
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+ -->
+
+
+ <!-- --reham-------------------------------------------------------- -->
+ 
+ <main>
+  <section >
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card" id="chat3" style="border-radius: 15px;border:2px solid rgb(189, 189, 189);">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0">
+                  <div class="p-3" data-mdb-perfect-scrollbar="true" style="position: relative; max-height: 320px; overflow: auto;">
+                    <div class="input-group rounded mb-3">
+                      <input type="search" style="border:2px solid rgb(189, 189, 189);" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+
+                                              
+                      <span class="input-group-text border-0" id="search-addon">
+                        <i class="fas fa-search"></i>
+                      </span>
+                    </div>
+                  
+                    <div data-mdb-perfect-scrollbar="true" style="position: relative; max-height: 400px; overflow: auto">
+                      <ul class="list-unstyled mb-0">
+                        <li class="p-2 border-bottom"  *ngFor="let user of AllUsers; let i=index" >
+                            <div class="d-flex flex-row align-items-center">
+                              <img  src="{{ avatarUrls[i] }}" alt="User avatar" class="d-flex align-self-center me-3" width="60">
+                              <span class="badge bg-success badge-dot" style="margin-left: -14%;
+                              margin-top: auto; display:inline-table; height: 15px;"></span>
+                              <div style="margin-left: 5%;">
+                                <br>
+                                <span style="cursor: pointer; color: #404c68;" (click)="GetMesg(user?.id)" class="fw-bold mb-0">{{user.userName}}</span>
+                                <p class="small text-muted">Online</p>
+                              </div>
+                            </div>
+                            <div class="d-flex flex-row align-items-center">
+                              <div>
+                                <span class="badge bg-success badge-dot me-2"></span>
+                              </div>
+                              <div class="pt-1">
+                                <p class="fw-bold mb-0"></p>
+                                <p class="small text-muted"></p>
+                              </div>
+                            </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-7 col-xl-8" >
+                    <div  class="pt-3 pe-3" data-mdb-perfect-scrollbar="true" style="position: relative; max-height: 320px; overflow: auto ">
+                      <ul  id="Chat" class="list-unstyled mb-0">
+                        <li class="p-2 border-bottom" >
+                            <div class="pt-1">
+                              <div  *ngFor="let mObj of chats"  class="d-flex flex-row justify-content-start" style="margin-top: 2%;">
+                                <p class="large p-2 me-3 mb-1 rounded-3 rightMsg" style="width: 50%;" *ngIf="mObj.senderId == currentUser " > {{ mObj.content }}</p>
+                                <p style="width: 40%;" class="large p-2 me-3 mb-1 rounded-3 leftMsg"  *ngIf="mObj.senderId !== currentUser " > {{ mObj.content }}</p>
+                              </div>
+                          </div>
+                        </li>
+                      </ul>
+                  </div>
+        
+                    <div class="text-muted d-flex justify-content-start align-items-center pe-3 pt-3 mt-2" style="justify-content: end;">
+                      <input type="text" class="form-control form-control" id="exampleFormControlInput2" placeholder="Type message" style="border:2px solid rgb(189, 189, 189);" [(ngModel)]="user.msgText"  />
+                      <a class="ms-3 " (click)="SendMessage()">
+                        <i style=" cursor: pointer; color:  #5283f5;" class="fa fa-paper-plane"></i>
+                      </a>
+                      <a class="ms-3 text-muted" href="#!"><i class="fas fa-smile" style="margin-left: -25%;"></i></a>
+                      <a class="ms-1 text-muted" href="#!"><i class="fas fa-paperclip"></i></a>
+                    </div> 
+                  </div>  
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </section>
+</main>
+
+

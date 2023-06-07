@@ -1,0 +1,91 @@
+<section style="margin: 50px">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-11 col-lg-7 col-xl-8">
+            <div class="card" style="border-radius: 15px">
+              <div class="card-body p-5">
+                <h1
+                  class="text text-center mb-5"
+                  style="font-family: 'Nanum Myeongjo', serif; font-size: 34px"
+                >
+                  Profile details
+                </h1>
+  
+                <form  >
+                    <label
+                    class="form-label mb-4"
+                    for="customFiley"
+                    style="
+                      display: flex;
+                      justify-content: center;
+                      font-family: 'Changa', sans-serif;
+                    "
+                    >Upload Protofilo</label
+                  >
+                        <div class="form-outline mb-4">
+                          <label class="form-label mb-3" for="form6Example2">Title</label>
+                          <input type="text" [(ngModel)]="ProtofiloData.portfoliTitle" name="ProtofiloData.portfoliTitle" id="form6Example2" class="form-control mb-2" />
+                        </div>
+
+                    <div class="form-outline mb-4" >
+                        <label class="form-label" for="form6Example7">Overview</label>
+                        <textarea class="form-control" [(ngModel)]="ProtofiloData.portflioDescription" name="ProtofiloData.portflioDescription" id="form6Example7" rows="4"></textarea>
+                    </div>
+
+                  <label
+                    class="form-label mb-4"
+                    for="customFile"
+                    style="
+                      font-family: 'Changa', sans-serif;
+                    "
+                    >Upload link</label
+                  >
+                  <input type="text" [(ngModel)]="ProtofiloData.portfoliolink" name="ProtofiloData.portfoliolink" id="form6Example2" class="form-control mb-2" />
+
+                  <!-- <input type="file" class="form-control" id="customFile" /> -->
+  
+                  <!-- Submit button -->
+                  <div  class="mt-5" style="display:flex;justify-content: space-between; ">
+                    <button
+                      type="button"
+                      class="btn btn-block "
+                      [routerLink]="['/Profile']"
+                      style="
+                        width: 30%;
+                        height: 40px;
+                        border-radius: 25px;
+                        background-color: #404c68;
+                        color: white;
+                        font-size: 16px;
+                      "
+                    >
+                     Skip
+                    </button>
+
+                <!-- skip button -->
+                    <button
+                        type="button"
+                        (click)="ProtofiloUpload()"
+                        class="btn btn-block"
+                        style="
+                        width: 30%;
+                        height: 40px;
+                        border-radius: 25px;
+                        background-color: #404c68;
+                        color: white;
+                        font-size: 16px;
+                        "
+                    >
+                        Next
+                    </button>
+                    </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

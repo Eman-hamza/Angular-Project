@@ -1,0 +1,88 @@
+<section style="margin: 50px;">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container ">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-11 col-lg-7 col-xl-8">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-5">
+                <h1 class="text text-center mb-5" style="font-family: 'Nanum Myeongjo', serif;font-size: 34px;">Add Job</h1>
+                <form [formGroup]="Jobform" (ngSubmit)='addJobs(Jobform)'>
+                    <!-- 2 column grid layout with text inputs for the first and last names -->
+                    <!-- {{pr}} -->
+                    <div class="row mb-4">
+                        <div class="col" style="display: none;">
+                            <div class="form-outline">
+                              <label class="form-label" for="form6Example2">ProfileId</label>
+                              <input type="text" id="form6Example2" formControlName="ProfileId" class="form-control" />
+                            </div>
+                          </div>
+                      <div class="col">
+                        <div class="form-outline">
+                            <label class="form-label" for="form6Example1">Title</label>
+                          <input type="text" id="form6Example1" formControlName="Title" value="Title"  [(ngModel)]="jobmodel.Title" class="form-control" />
+                          
+                        </div>
+                      </div>
+                     
+                      <div class="col">
+                        <div class="form-outline">
+                          <label class="form-label" for="form6Example2">Budget</label>
+                          <input type="number" id="form6Example2" formControlName="Budget" [(ngModel)]="jobmodel.Budget" class="form-control" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                          <label class="form-label" for="form6Example2">Description</label>
+                          <input type="text" id="form6Example2" formControlName="Description" [(ngModel)]="jobmodel.Description" class="form-control" />
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-outline">
+                          <label class="form-label" for="form6Example2">Number Of Connects</label>
+                          <input type="number" id="form6Example2" formControlName="numberOfConnects" [(ngModel)]="jobmodel.numberOfConnects" class="form-control" />
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-outline">
+                          <label class="form-label" for="form6Example2">Location </label>
+                          <select formControlName="LocationId" [(ngModel)]="jobmodel.LocationId"  class="form-control">
+                            <option [value]="loc.id" *ngFor="let loc of ObjLocation">{{loc.name}}</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-outline">
+                          <label class="form-label" for="form6Example2">Category </label>
+                          <select  formControlName="CategoryId" [(ngModel)]="jobmodel.CategoryId"   class="form-control">
+                            <option  *ngFor="let cat of ObjCategory" [value]="cat.id" >{{cat.name}}</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div  class="mt-5" style="display:flex;justify-content: center; ">
+                     
+                      <button
+                      type="submit"
+                    
+                      class="btn btn-block"
+                      style="
+                      width: 30%;
+                      height: 40px;
+                      border-radius: 25px;
+                      background-color: #404c68;
+                      color: white;
+                      font-size: 16px;
+                      "
+                  >
+                      Next
+                  </button>
+                </div>
+                </form>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

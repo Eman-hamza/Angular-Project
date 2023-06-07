@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+li a{
+    padding: 12px;
+}
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link{
+    color: white;
+
+}
+.alogout:hover{
+    color: #404c68;
+    font-weight: 600;
+}

@@ -1,0 +1,24 @@
+<div class="container" style="padding: 30px;">
+<div class="card" *ngFor="let h of hireJobs">
+    <h2 class="card-header bg-light">
+        <div class="row">
+            <div class="col col-md-8">
+               You're Hired By : <span style="color:#404c68">{{h.clientName}} </span>
+            </div>
+            <div class="col col-md-4">
+               <small data-test="connects-to-apply" class="d-none d-lg-inline-flex d-md-inline-flex text-muted">
+               <strong data-test="connect-price">Hirring At: &nbsp;</strong>  <span style="color:#404c68">{{h.createdAt}} </span>&nbsp;</small>
+            </div>
+        </div>
+    </h2>
+    <div class="card-body">
+      <h3 class="card-title"> <span style="font-size: 18px; font-weight: 500;">Job Name : </span>{{h.jobName}}</h3>
+      <h4 style="font-size: 18px; font-weight: 500;">Cover Letter: </h4>
+      <p class="card-text">{{h.coverLetter}}</p>
+      <h4 style="font-size: 18px; font-weight: 500;">Job Description: </h4>
+      <p class="card-text">{{h.jobDescription}}</p>
+      <h4 style="font-size: 18px; font-weight: 500;">Job Budget: <span style="color:#404c68"> {{h.jobBudget}}$ </span></h4>
+    </div>
+  </div>
+  <br>
+  </div>

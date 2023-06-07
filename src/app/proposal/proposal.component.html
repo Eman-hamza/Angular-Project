@@ -1,0 +1,364 @@
+<!doctype html>
+<html data-n-head-ssr lang="en" theme="air-2-76">
+
+<head>
+    <title>Submit a Proposal</title>
+
+</head>
+
+<body>
+    <div data-server-rendered="true" id="__nuxt">
+        <div id="__layout">
+            <div data-fetch-key="0" class="layout-container">
+                <div class="layout">
+
+                    <main id="main" tabindex="-1">
+                        <form [formGroup]="Dataform" (ngSubmit)="sendData()">
+                            <!-- {{Dataform.value|json}} -->
+                            <!-- {{PostProposal.coverLetter|json}} -->
+                            <div class="container">
+
+                                <div>
+                                    <div>
+                                        <h1 class="d-none d-lg-block">
+                                            Submit a Proposal
+                                        </h1>
+
+                                        
+
+
+                                        <!----------------------------------terms section--------------------------->
+                                    
+                                        <div class="fe-proposal-job-terms">
+                                            <div class="up-card py-0" small="true" keep-alive="true">
+                                                <header class="up-card-header">
+                                                    <h2 class="mb-0">Terms</h2>
+                                                </header>
+                                                <section class="up-card-section up-loader-container">
+                                                    <div class="up-fe-pay-by-project">
+                                                        <div class="row">
+                                                            <div class="col-md-8">
+                                                                <div>
+                                                                    <strong class="mb-10 pb-md-5 d-block">What is the
+                                                                        full amount you'd like to bid for this
+                                                                        job?</strong>
+                                                                    <div class="charged-amount row">
+                                                                        <div class="form-group up-form-group mb-0 row">
+                                                                            <div class="col-md-7">
+                                                                                <div class="mb-10 ml-15">
+                                                                                    <strong>
+                                                                                        <label
+                                                                                            for="charged-amount-id">Bid</label>
+                                                                                    </strong>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="text-muted mb-10 m-0-bottom-md m-0-bottom-xl ml-15">
+                                                                                    Total amount the client will see on
+                                                                                    your proposal
+                                                                                </div>
+                                                                            </div>
+                                                                            <div data-test="charged-amount"
+                                                                                class="amount col-md-5">
+                                                                                <div class="up-currency"
+                                                                                    data-test="charged-amount">
+                                                                                    <div class="up-input-group">
+                                                                                        <div
+                                                                                            class="up-input-group-prepend">
+                                                                                            <div class="up-icon">
+                                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                                    aria-hidden="true"
+                                                                                                    viewBox="0 0 14 14"
+                                                                                                    role="img">
+                                                                                                    <path
+                                                                                                        fill-rule="evenodd"
+                                                                                                        d="M7.175 7.708v3.099c1.086-.11 1.7-.645 1.7-1.463v-.032c0-.739-.378-1.21-1.7-1.604zM5.917 5.553v-3.02c-1.07.11-1.668.676-1.651 1.415v.016c0 .723.314 1.18 1.651 1.59zm3.507-1.856c-.739-.535-1.494-.913-2.249-1.07v3.24c2.47.614 3.555 1.589 3.54 3.335v.032c0 1.793-1.4 2.973-3.476 3.162V14H5.854v-1.636A7.37 7.37 0 012 10.728l1.007-1.431c.929.77 1.825 1.274 2.91 1.447V7.409c-2.39-.613-3.491-1.494-3.491-3.319v-.03c0-1.747 1.384-2.942 3.428-3.1V0h1.385v.991c1.195.142 2.17.567 3.083 1.243l-.898 1.463z">
+                                                                                                    </path>
+                                                                                                </svg>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <!--input bid expected-->
+
+                                                                                        <input
+                                                                                            [(ngModel)]="PostProposal.proposedPrice"
+                                                                                            formControlName="ProposedPrice"
+                                                                                            id="charged-amount-id"
+                                                                                            type="text"
+                                                                                            inputmode="decimal"
+                                                                                            placeholder="0.00"
+                                                                                            class="up-input text-right">
+                                                                                    </div>
+                                                                                    <span></span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <hr>
+                                                                    <div class="earned-amount row">
+                                                                        <div class="col-md-7 p-0-right">
+                                                                            <strong class="mb-10 d-block">
+                                                                                <label for="earned-amount-id">You’ll
+                                                                                    Receive</label>
+                                                                            </strong>
+                                                                            <div
+                                                                                class="mb-10 m-0-bottom-md m-0-bottom-xl">
+                                                                                <span class="text-muted"> The estimated
+                                                                                    amount you'll receive after service
+                                                                                    fees </span>
+                                                                                <div class="text-primary up-icon up-popper-trigger"
+                                                                                    id="earned-amount-help"
+                                                                                    aria-label="Help Tip" tabindex="0"
+                                                                                    role="button"
+                                                                                    aria-describedby="popper_2">
+                                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                        aria-hidden="true"
+                                                                                        viewBox="0 0 14 14" role="img">
+                                                                                        <path fill-rule="evenodd"
+                                                                                            d="M7 0a7 7 0 100 14A7 7 0 007 0zm3.017 4.981c0 1.57-1.128 2.278-2.52 2.52l-.131 1.03h-.96l-.251-2.015.059-.06c1.608-.06 2.327-.588 2.327-1.44v-.023c0-.72-.551-1.236-1.462-1.236-.804 0-1.464.36-2.064 1.008l-.9-.948c.72-.827 1.644-1.39 3-1.39 1.738 0 2.902.983 2.902 2.53v.024zm-3.958 6.284V9.598h1.606v1.667H6.059z">
+                                                                                        </path>
+                                                                                    </svg>
+                                                                                </div>
+
+                                                                                <div data-test="earned-amount"
+                                                                                    class="amount col-md-5">
+                                                                                    <div class="up-currency"
+                                                                                        data-test="earned-amount">
+                                                                                        <div class="up-input-group">
+                                                                                            <!--after bid-->
+                                                                                            <input id="earned-amount-id"
+                                                                                                type="text"
+                                                                                                inputmode="decimal"
+                                                                                                placeholder="$ {{BidRecevied}}"
+                                                                                                class="up-input text-right"
+                                                                                                disabled>
+                                                                                        </div>
+                                                                                        <span></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div data-v-31b736a4=""
+                                                                class="col-md-4 up-shield-container-md text-center">
+                                                                <div data-v-31b736a4=""
+                                                                    class="up-illustration up-shield-logo">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        viewBox="0 0 145 130" aria-hidden="true"
+                                                                        role="img">
+                                                                        <linearGradient id="shield-313-a-uid-5"
+                                                                            gradientUnits="userSpaceOnUse" x1="23.763"
+                                                                            y1="1.285" x2="121.237" y2="1.285"
+                                                                            gradientTransform="matrix(1 0 0 -1 0 130)">
+                                                                            <stop offset="0" stop-color="#c3d2c3"
+                                                                                stop-opacity="0"></stop>
+                                                                            <stop offset=".309" stop-color="#c3d2c3">
+                                                                            </stop>
+                                                                            <stop offset=".374" stop-color="#c3d2c3">
+                                                                            </stop>
+                                                                            <stop offset=".75" stop-color="#c3d2c3">
+                                                                            </stop>
+                                                                            <stop offset="1" stop-color="#c3d2c3"
+                                                                                stop-opacity=".014"></stop>
+                                                                        </linearGradient>
+                                                                        <path
+                                                                            d="M120.4 127.4H24.6c-.4 0-.8.6-.8 1.3 0 .7.4 1.3.8 1.3h95.9c.4 0 .8-.6.8-1.3-.1-.6-.5-1.3-.9-1.3z"
+                                                                            fill="url(#shield-313-a-uid-5)"></path>
+                                                                        <linearGradient id="shield-313-b-uid-5"
+                                                                            gradientUnits="userSpaceOnUse" x1="28.419"
+                                                                            y1="111.592" x2="114.296" y2="25.715"
+                                                                            gradientTransform="matrix(1 0 0 -1 0 130)">
+                                                                            <stop offset=".27" stop-color="#eb9546">
+                                                                            </stop>
+                                                                            <stop offset=".29" stop-color="#ed9b4d">
+                                                                            </stop>
+                                                                            <stop offset=".38" stop-color="#f4b164">
+                                                                            </stop>
+                                                                            <stop offset=".48" stop-color="#f8c174">
+                                                                            </stop>
+                                                                            <stop offset=".59" stop-color="#fbca7e">
+                                                                            </stop>
+                                                                            <stop offset=".72" stop-color="#fccd81">
+                                                                            </stop>
+                                                                            <stop offset="1" stop-color="#eb9546">
+                                                                            </stop>
+                                                                        </linearGradient>
+                                                                        <path
+                                                                            d="M71.3 129.2c-11.6 0-22.7-4.6-30.8-12.8-8.2-8.2-12.8-19.3-12.8-30.8V19.1l43.4-9.5 43.8 9.5v66.5c0 11.6-4.6 22.7-12.8 30.8-8.1 8.2-19.2 12.8-30.8 12.8z"
+                                                                            fill="url(#shield-313-b-uid-5)"></path>
+                                                                        <path
+                                                                            d="M88.3 12.9l-15-3.3-7.2 1.6c-6.5 4-14.3 5.7-21.9 4.8l-14.4 3.1v66.5c0 11.6 4.6 22.7 12.8 30.8 8.2 8.2 19.3 12.8 30.8 12.8 11.6 0 22.7-4.6 30.9-12.8 8.2-8.2 12.8-19.3 12.8-30.9V19.1l-13.4-2.9c-5.3.1-10.6-1-15.4-3.3zm25.4 11.4v61.8c.1 5.1-.7 10.1-2.6 14.8-1.8 4.7-4.6 9-8.2 12.7-3.5 3.6-7.8 6.5-12.4 8.5-4.7 2-9.7 3-14.8 3-5.1 0-10.1-1-14.8-3-4.7-2-8.9-4.9-12.4-8.5-3.5-3.6-6.3-7.9-8.2-12.7-1.8-4.7-2.7-9.8-2.6-14.8V24.3c6.5 1.7 13.4 1.8 20 .3s12.7-4.4 18-8.7c2.5 2 5.2 3.8 8.1 5.2 9.2 4.6 19.8 5.7 29.9 3.2z"
+                                                                            fill="#ce7e3c"></path>
+                                                                        <path
+                                                                            d="M76.5 103.9h-3.6v-7.6C69 96.1 65.1 95 61.7 93c-4.4-2.9-6.5-7.9-6.4-14.9h10.3c.1 2.2.6 4.4 1.5 6.5.7.9 1.5 1.7 2.5 2.3 1 .6 2.1.9 3.3 1V71.7l-3.1-.9c-4-.9-7.5-3-10.3-5.9-2-2.6-3.1-5.9-3-9.2 0-2.2.4-4.4 1.2-6.5.8-2 2.1-3.9 3.7-5.4 1.6-1.5 3.5-2.6 5.6-3.3a29 29 0 015.9-.9v-5.2h3.6v5.2c3.5.1 6.8 1.2 9.7 3 2.2 1.4 3.9 3.4 5.1 5.8 1.2 2.3 1.7 4.9 1.6 7.5H83c0-1.7-.4-3.4-1-4.9-.5-.9-1.3-1.7-2.3-2.3-.9-.5-2-.8-3.1-.7v14.5c4.3 1.2 8.4 3 12.1 5.4 1.7 1.3 3.1 3.1 3.9 5 .9 2 1.3 4.1 1.2 6.3.2 2.8-.3 5.5-1.6 8-1.2 2.5-3.1 4.5-5.5 6-3.1 1.9-6.6 3-10.2 3.3v7.4zm-3.6-56c-.9-.1-1.8.1-2.6.4s-1.6.8-2.3 1.4c-1.1 1.3-1.7 2.9-1.6 4.6 0 1 .2 2 .6 2.8.4.9 1 1.7 1.8 2.2 1.3.9 2.6 1.5 4.1 1.9V47.9zm3.6 39.9c1.5-.1 3-.6 4.3-1.4.9-.7 1.5-1.7 1.9-2.7.4-1.1.6-2.2.4-3.3.1-1-.1-2-.5-2.9-.4-.9-1-1.7-1.7-2.3-1.4-1-2.9-1.8-4.5-2.3v14.9z"
+                                                                            fill="#ce7e3c"></path>
+                                                                        <linearGradient id="shield-313-c-uid-5"
+                                                                            gradientUnits="userSpaceOnUse" x1="72.514"
+                                                                            y1="-1.102" x2="72.514" y2="130.027"
+                                                                            gradientTransform="matrix(1 0 0 -1 0 130)">
+                                                                            <stop offset="0" stop-color="#fccd81">
+                                                                            </stop>
+                                                                            <stop offset=".2" stop-color="#f6ba6d">
+                                                                            </stop>
+                                                                            <stop offset=".48" stop-color="#f0a657">
+                                                                            </stop>
+                                                                            <stop offset=".74" stop-color="#ec994a">
+                                                                            </stop>
+                                                                            <stop offset=".99" stop-color="#eb9546">
+                                                                            </stop>
+                                                                        </linearGradient>
+                                                                        <path
+                                                                            d="M118.5 7.3l-2.7 3.2c-7.1 3.4-15.2 4.3-22.9 2.4-7.6-2-14.4-6.5-19.1-12.9h-2.7l-.7 3.9c-5.7 5.7-13.3 9.2-21.4 9.8-8 .7-16-1.6-22.5-6.4h-2.7l2.7 5.8v70.7c.3 12.4 5.4 24.1 14.3 32.8 8.9 8.6 20.7 13.5 33.1 13.5s24.3-4.8 33.1-13.5c8.9-8.6 14-20.4 14.3-32.8V7.3h-2.8zm-6.7 76.4c-.3 9.9-4.4 19.3-11.5 26.2-7.1 6.9-16.6 10.8-26.5 10.8-9.9 0-19.4-3.9-26.5-10.8-7.1-6.9-11.2-16.3-11.5-26.2V21.9c6.5 1.7 13.4 1.8 20 .3s12.8-4.4 18-8.7c2.5 2 5.2 3.8 8.1 5.2 9.3 4.6 19.9 5.7 29.9 3.2v61.8z"
+                                                                            fill="url(#shield-313-c-uid-5)"></path>
+                                                                        <linearGradient id="shield-313-d-uid-5"
+                                                                            gradientUnits="userSpaceOnUse" x1="23.717"
+                                                                            y1="122.67" x2="119.147" y2="27.24"
+                                                                            gradientTransform="matrix(1 0 0 -1 0 130)">
+                                                                            <stop offset=".06" stop-color="#fccd81">
+                                                                            </stop>
+                                                                            <stop offset=".69" stop-color="#eb9546">
+                                                                            </stop>
+                                                                            <stop offset=".74" stop-color="#f0a658">
+                                                                            </stop>
+                                                                            <stop offset=".84" stop-color="#f7bb6e">
+                                                                            </stop>
+                                                                            <stop offset=".92" stop-color="#fbc97c">
+                                                                            </stop>
+                                                                            <stop offset="1" stop-color="#fccd81">
+                                                                            </stop>
+                                                                        </linearGradient>
+                                                                        <path
+                                                                            d="M71.2 0C65.8 7.2 57.8 12.1 49 13.4s-18-.8-25.2-6.1v76.5c.3 12.4 5.4 24.1 14.3 32.8 8.9 8.6 20.7 13.5 33.1 13.5 12.4 0 24.3-4.8 33.1-13.5 8.9-8.6 14-20.4 14.3-32.8V7.3c-7.2 5.3-16.3 7.5-25.2 6.2C84.5 12.1 76.5 7.2 71.2 0zm37.9 83.7c0 10.1-4 19.7-11.1 26.9-7.1 7.1-16.8 11.1-26.9 11.1s-19.7-4-26.9-11.1c-7.1-7.1-11.1-16.8-11.1-26.9V21.9c6.5 1.7 13.4 1.8 20 .3s12.8-4.4 18-8.7c2.5 2 5.2 3.8 8.1 5.2 9.3 4.6 19.9 5.7 29.9 3.2v61.8z"
+                                                                            fill="url(#shield-313-d-uid-5)"></path>
+                                                                        <linearGradient id="shield-313-e-uid-5"
+                                                                            gradientUnits="userSpaceOnUse" x1="73.137"
+                                                                            y1="27.715" x2="73.137" y2="97.311"
+                                                                            gradientTransform="matrix(1 0 0 -1 0 130)">
+                                                                            <stop offset="0" stop-color="#fbc97d">
+                                                                            </stop>
+                                                                            <stop offset=".25" stop-color="#eb9546">
+                                                                            </stop>
+                                                                            <stop offset=".56" stop-color="#fccd81">
+                                                                            </stop>
+                                                                            <stop offset="1" stop-color="#eb9546">
+                                                                            </stop>
+                                                                        </linearGradient>
+                                                                        <path
+                                                                            d="M75.1 102.3h-3.7v-7.6c-3.9-.2-7.8-1.3-11.2-3.3-4.4-2.9-6.5-7.9-6.4-14.9h10.3c.1 2.2.6 4.4 1.5 6.5.7.9 1.5 1.7 2.5 2.3 1 .6 2.1.9 3.3 1V69.9l-3-.9c-4-.9-7.5-3-10.3-5.9-2.1-2.6-3.2-5.9-3.1-9.2 0-2.2.4-4.4 1.2-6.5.8-2.1 2.1-3.9 3.7-5.4 1.6-1.5 3.5-2.6 5.7-3.3a29 29 0 015.9-.9v-5.1h3.7v5.1c3.5.1 6.8 1.2 9.7 3.1 2.2 1.4 3.9 3.4 5.1 5.7 1.2 2.3 1.7 4.9 1.6 7.5h-10c-.1-1.7-.5-3.4-1.1-4.9-.5-.9-1.3-1.7-2.2-2.2-.9-.5-2-.8-3-.8v14.5c4.3 1.3 8.4 3.1 12.2 5.5 1.7 1.3 3.1 3.1 3.9 5 .9 2 1.3 4.1 1.2 6.3.2 2.7-.3 5.5-1.6 8-1.2 2.5-3.1 4.5-5.5 6-3.1 1.8-6.6 2.9-10.2 3.1v7.7zm-3.7-56c-.9-.1-1.8.1-2.6.4-.8.3-1.6.7-2.3 1.3-1.1 1.3-1.7 2.9-1.6 4.6 0 1 .2 2 .6 2.8.4.9 1.1 1.7 1.8 2.2 1.3.9 2.6 1.5 4.1 1.9V46.3zm3.7 39.8c1.5-.1 3-.6 4.4-1.4.9-.7 1.5-1.7 2-2.7.4-1.1.6-2.2.5-3.3.1-1-.1-2-.5-2.9-.4-.9-1-1.7-1.7-2.3-1.4-1-2.9-1.8-4.5-2.3l-.2 14.9z"
+                                                                            fill="url(#shield-313-e-uid-5)"></path>
+                                                                        <linearGradient id="shield-313-f-uid-5"
+                                                                            gradientUnits="userSpaceOnUse" x1="51.461"
+                                                                            y1="82.229" x2="89.21" y2="44.479"
+                                                                            gradientTransform="matrix(1 0 0 -1 0 130)">
+                                                                            <stop offset=".38" stop-color="#fccd81">
+                                                                            </stop>
+                                                                            <stop offset=".44" stop-color="#f7be71">
+                                                                            </stop>
+                                                                            <stop offset=".55" stop-color="#f1a759">
+                                                                            </stop>
+                                                                            <stop offset=".65" stop-color="#ec9a4b">
+                                                                            </stop>
+                                                                            <stop offset=".74" stop-color="#eb9546">
+                                                                            </stop>
+                                                                            <stop offset="1" stop-color="#fccd81">
+                                                                            </stop>
+                                                                        </linearGradient>
+                                                                        <path
+                                                                            d="M72.4 102.3h-3.7v-7.6c-3.9-.2-7.8-1.3-11.2-3.3-4.4-2.9-6.5-7.9-6.4-14.9h10.3c.1 2.2.6 4.4 1.5 6.4.7 1 1.5 1.7 2.5 2.3 1 .6 2.1.9 3.3 1V69.9l-3.1-.9c-3.9-.9-7.5-3-10.3-5.9-2-2.6-3.1-5.9-3-9.2 0-2.2.4-4.4 1.2-6.5.8-2 2.1-3.9 3.7-5.4 1.6-1.5 3.5-2.6 5.6-3.3a29 29 0 015.9-.9v-5.1h3.7v5.1c3.5.1 6.8 1.2 9.7 3.1 2.2 1.4 3.9 3.4 5.1 5.7 1.2 2.3 1.7 4.9 1.6 7.5h-10c-.1-1.7-.4-3.4-1.1-4.9-.5-.9-1.3-1.7-2.2-2.2-.9-.5-2-.8-3-.8v14.5c4.3 1.3 8.4 3.1 12.2 5.5 1.7 1.3 3 3.1 3.9 5 .9 2 1.3 4.1 1.2 6.3.2 2.7-.3 5.5-1.6 8-1.2 2.5-3.1 4.5-5.5 6-3.1 1.8-6.6 2.9-10.2 3.1v7.7zm-3.7-56c-.9 0-1.8.1-2.6.4-.8.3-1.6.8-2.3 1.4-1.1 1.3-1.7 2.9-1.6 4.6 0 1 .2 2 .6 2.8.4.9 1.1 1.7 1.8 2.2 1.3.9 2.6 1.5 4.1 1.9V46.3zm3.7 39.8c1.5-.1 3-.6 4.3-1.4.9-.7 1.5-1.7 2-2.7.4-1.1.6-2.2.5-3.3 0-1-.1-1.9-.5-2.8-.4-.9-1-1.7-1.7-2.3-1.4-1-2.9-1.8-4.5-2.3l-.1 14.8z"
+                                                                            fill="url(#shield-313-f-uid-5)"></path>
+                                                                    </svg>
+                                                                </div>
+                                                                <div data-v-31b736a4="" class="text-muted mt-10">
+                                                                    Includes Upwork Fixed-Price Protection.
+                                                                    <br data-v-31b736a4="">
+                                                                    <a data-v-31b736a4=""
+                                                                    style="color:#404c68;"
+                                                                        href="https://support.upwork.com/hc/en-us/articles/211063748"
+                                                                        target="_blank" rel="noopener"
+                                                                        aria-label="Learn more about Upwork Fixed-Price Protection">
+                                                                        Learn more
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div data-v-99fd71a2="" aria-live="polite"
+                                                                class="up-loader-wrapper" data-v-8afc60e8="">
+                                                                <div data-cy="loader-overlay" class="up-loader-overlay">
+                                                                    <div class="up-icon lg" slot="spinner-icon"
+                                                                        data-cy="loader-icon">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            viewBox="25 25 50 50" class="spinner">
+                                                                            <circle cx="50" cy="50" r="20"
+                                                                                stroke-width="4" stroke-miterlimit="10">
+                                                                            </circle>
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-----------------------------proposal-------------------------------->
+
+                                <div class="fe-proposal-additional-details additonal-details">
+                                    <div class="up-card py-0">
+                                        <header class="up-card-header">
+                                            <div class="mb-0">
+                                                <h2 class="mb-0">Additional details</h2>
+                                            </div>
+                                        </header>
+                                        <section class="up-card-section up-loader-container">
+                                            <div class="cover-letter-area">
+                                                <div class="form-group up-form-group">
+                                                    <label id="cover_letter_label" class="up-label">
+                                                        Cover Letter
+                                                    </label>
+                                                    <div>
+                                                        <textarea rows="5" cols="130" formControlName="CoverLetter"
+                                                            name="PostProposal.CoverLetter" placeholder=""
+                                                            aria-labelledby="cover_letter_label"
+                                                            class="up-textarea"
+                                                            [(ngModel)]="PostProposal.coverLetter"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fe-proposal-job-questions questions-area"></div>
+
+                                        </section>
+                                    </div>
+                                </div>
+
+
+
+                                <!----------------footer for sent data------------------>
+
+
+                                <footer class="pb-10 mt-20">
+                                    <div role="group">
+                                        <button type="submit" class="up-btn m-0" style="background-color:#404c68;color:white;">
+                                            Send A Proposal to Submit
+                                        </button>
+                                        <button type="button" class="up-btn up-btn-link m-0" style="color:#404c68;">
+                                            Cancel
+                                        </button>
+                                    </div>
+                                </footer>
+
+
+
+                            </div>
+                        </form>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
